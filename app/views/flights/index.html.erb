@@ -1,0 +1,12 @@
+<h1>Réservez votre prochain vol ici !</h1>
+<p>Votre itinéraire</p>
+
+<!-- Création d'un formulaire avec liste déroulante -->
+<%= form_tag("/flights", method: "get") do %>
+
+  Aéroport de départ : <%= select_tag(:departure_airport, options_for_select(@airports))%> <br>
+  Aéroport d'arrivée :<%= select_tag(:arrival_airport, options_for_select(@airports))%> <br>
+  <!-- Nombre de passagers : -->
+
+  <%= submit_tag("Valider") %>
+<% end %>
